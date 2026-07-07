@@ -4,5 +4,10 @@
       "source": "/(.*)",
       "destination": "/src/index.js"
     }
-  ]
+  ],
+  "functions": {
+    "src/index.js": {
+      "runtime": "vercel-node@latest"
+    }
+  }
 }
