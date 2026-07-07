@@ -1,11 +1,9 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-// IMPORTANT: Check karo ki ye paths abhi bhi sahi hain ya nahi.
-// Agar 'routes' folder 'api' ke andar hai, toh ye aise hi rahega.
-import bookingRoutes from '../routes/bookings.js'; 
-import adminRoutes from '../routes/admin.js';
-import { connectDB } from '../config/db.js';
+import bookingRoutes from './routes/bookings.js';
+import adminRoutes from './routes/admin.js';
+import { connectDB } from './config/db.js';
 
 dotenv.config();
 
@@ -33,9 +31,4 @@ app.use((err, req, res, next) => {
   res.status(500).json({ success: false, message: 'Something went wrong!' });
 });
 
-// !!! SABSE ZAROORI BAAT !!!
-// Agar yahan 'app.listen(3000, ...)' likha hai, toh use DELETE kar do.
-// Vercel ko server khud chalaane do.
-
-// Sirf ye line rehni chahiye:
 export default app;
